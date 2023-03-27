@@ -1,23 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import Cards from "./components/Cards";
+import Header from "./components/Header";
+import Jumbotron from "./components/jumbotron";
+import './index.css'
+const movie = {
+  TV: {
+    tv1: {
+      image: 'Card1',
+      name: 'The Witcher',
+      year: '2019'
+    },
+    tv2: {
+      image: 'Card1',
+      name: 'Persona 3 The Movie',
+      year: '2016'
+    },
+
+  },
+  Movies: {
+    Movie1: {
+      image: 'Card1',
+      name: 'title1',
+      year: '2019'
+    }
+  }
+}
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Header />
+      <Jumbotron />
+      <Cards value={movie} />
     </div>
   );
 }
