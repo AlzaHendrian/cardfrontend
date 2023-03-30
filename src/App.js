@@ -1,37 +1,24 @@
-import Cards from "./components/Cards";
-import Header from "./components/Header";
-import Jumbotron from "./components/jumbotron";
+import Home from "./components/Home";
+import Movies from "./components/Movies";
 import './index.css'
-const movie = {
-  TV: {
-    tv1: {
-      image: 'Card1',
-      name: 'The Witcher',
-      year: '2019'
-    },
-    tv2: {
-      image: 'Card1',
-      name: 'Persona 3 The Movie',
-      year: '2016'
-    },
-
-  },
-  Movies: {
-    Movie1: {
-      image: 'Card1',
-      name: 'title1',
-      year: '2019'
-    }
-  }
-}
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Navbar from "./components/Navbar";
+import Shows from "./components/Shows";
+import Detail from "./components/Detail";
 
 
 function App() {
   return (
     <div>
-      <Header />
-      <Jumbotron />
-      <Cards value={movie} />
+      <Router>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/movies" element={<Movies />} />
+          <Route path="/tv-series" element={<Shows />} />
+          <Route path="/detail/:id" element={<Detail />} />
+        </Routes>
+      </Router>
     </div>
   );
 }
